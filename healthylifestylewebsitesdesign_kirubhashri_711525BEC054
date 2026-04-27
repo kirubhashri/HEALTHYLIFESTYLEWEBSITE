@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthy Lifestyle Website</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            text-align: center;
+            background: white;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        nav a.active {
+            color: #27ae60;
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+        }
+
+        .active-section {
+            display: block;
+        }
+
+        .card {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .main-img {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .fitness-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .fit-img {
+            width: 30%;
+            margin: 10px;
+        }
+
+        .progress {
+            background: #ddd;
+            border-radius: 20px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            width: 0%;
+            background: green;
+            color: white;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll("section");
+            sections.forEach(sec => sec.classList.remove("active-section"));
+
+            document.getElementById(id).classList.add("active-section");
+
+            let links = document.querySelectorAll("nav a");
+            links.forEach(link => link.classList.remove("active"));
+
+            event.target.classList.add("active");
+        }
+
+        function showTip() {
+            document.getElementById("tip").innerHTML =
+                "Drink water 💧 Eat fruits 🍎 Stay active 🏃";
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if (name === "" || email === "") {
+                alert("Fill all fields");
+                return false;
+            }
+            alert("Submitted!");
+            return true;
+        }
+
+        function loadProgress() {
+            let bar = document.getElementById("bar");
+            let width = 0;
+            let interval = setInterval(() => {
+                if (width >= 70) clearInterval(interval);
+                else {
+                    width++;
+                    bar.style.width = width + "%";
+                    bar.innerHTML = width + "%";
+                }
+            }, 20);
+        }
+
+        function calculateBMI() {
+            let h = document.getElementById("height").value / 100;
+            let w = document.getElementById("weight").value;
+            let bmi = (w / (h * h)).toFixed(2);
+
+            document.getElementById("bmiResult").innerHTML =
+                "Your BMI: " + bmi;
+        }
+
+        window.onload = function () {
+            document.getElementById("home").classList.add("active-section");
+            loadProgress();
+        };
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Healthy Lifestyle</h1>
+    <p>Stay Fit 💪 Stay Happy 😊</p>
+</header>
+
+<nav>
+    <a onclick="showSection('home')" class="active">Home</a>
+    <a onclick="showSection('diet')">Diet</a>
+    <a onclick="showSection('fitness')">Fitness</a>
+    <a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+<div class="card">
+    <h2>Welcome</h2>
+    <p>A healthy lifestyle includes diet, exercise, and mental peace.</p>
+    <button onclick="showTip()">Show Tip</button>
+    <p id="tip"></p>
+</div>
+</section>
+
+<!-- DIET -->
+<section id="diet">
+<div class="card">
+    <h2>Healthy Diet 🍎</h2>
+    <ul>
+        <li>Eat fruits & vegetables</li>
+        <li>Drink water</li>
+        <li>Avoid junk food</li>
+    </ul>
+
+    <img src="diet-plan.jpg" class="main-img">
+    <img src="balanced-diet.jpg" class="main-img">
+    <img src="protein-food.jpg" class="main-img">
+</div>
+</section>
+
+<!-- FITNESS -->
+<section id="fitness">
+<div class="card">
+    <h2>Fitness 🏃</h2>
+
+    <div class="fitness-images">
+        <img src="fitness1.jpg" class="fit-img">
+        <img src="fitness2.jpg" class="fit-img">
+        <img src="fitness3.jpg" class="fit-img">
+    </div>
+
+    <h3>Progress</h3>
+    <div class="progress">
+        <div id="bar" class="progress-bar"></div>
+    </div>
+
+    <h3>BMI Calculator</h3>
+    <input type="number" id="height" placeholder="Height (cm)">
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <button onclick="calculateBMI()">Calculate</button>
+    <p id="bmiResult"></p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="card">
+    <h2>Contact</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <input type="submit">
+    </form>
+</div>
+</section>
+
+</body>
+</html>
