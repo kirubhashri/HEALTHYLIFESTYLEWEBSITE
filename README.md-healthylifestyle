@@ -1,0 +1,110 @@
+# HEALTHYLIFESTYLEWEBSITE
+1.Project Title
+
+Healthy Lifestyle Website 
+using HTML, CSS & JavaScript
+
+2.Project Description
+
+This project is a single-page dynamic website designed to promote a healthy lifestyle. It includes sections like Home, Diet, Fitness, and Contact, all integrated into one file and controlled using JavaScript.
+
+3.The website provides:
+
+*Basic health tips
+*Diet guidance with images
+*Fitness exercises with progress tracking
+*BMI calculator for users
+*Contact form with validation
+
+"JavaScript is used to make the website interactive and dynamic, simulating a multi-page website experience."
+
+⚙️ Installation Instructions
+Create a folder (e.g., HealthyWebsite)
+
+Save your code as:
+index.html
+
+4.Add required images:
+diet-plan.jpg
+balanced-diet.jpg
+protein-food.jpg
+fitness1.jpg
+fitness2.jpg
+fitness3.jpg
+Open index.html in any web browser (Chrome, Edge, etc.)
+
+5.Usage:
+Click Home / Diet / Fitness / Contact to navigate
+Click “Show Tip” to display a health tip
+View diet and fitness images
+Track progress using animated bar
+Enter height & weight to calculate BMI
+Fill and submit the contact form
+
+6.Features:
+✅ Single-page website with multiple sections
+✅ JavaScript-based navigation (no page reload)
+✅ Interactive health tip button
+✅ Image display for diet & fitness
+✅ Animated progress bar
+✅ BMI calculator
+✅ Form validation
+✅ Clean and responsive UI
+
+7.Technologies Used:
+HTML → Structure of the webpage
+CSS → Styling and layout
+JavaScript → Interactivity and dynamic behavior
+
+8.Tags Used:
+*HTML Tags Used
+Structure Tags
+<html> – Root element
+<head> – Metadata section
+<body> – Main content
+  
+*Content Tags
+<header> – Top section
+<nav> – Navigation bar
+<section> – Page sections
+<div> – Container
+  
+*Text Tags
+<h1>, <h2>, <h3> – Headings
+<p> – Paragraph
+<ul>, <li> – List
+  
+*Media Tags
+<img> – Images
+
+*Form Tags
+<form> – Form container
+<input> – Input fields
+<textarea> – Text area
+<button> – Button
+  
+*Script & Style
+<style> – CSS styling
+<script> – JavaScript
+  
+9.Overview of the Code:
+This project is a JavaScript-based single-page website where different sections are shown and hidden dynamically using the showSection() function.
+
+Key Functionalities:
+Navigation System:
+JavaScript switches sections without reloading the page
+Dynamic Content:
+“Show Tip” button displays health advice
+Progress Bar Animation:
+Uses setInterval() to animate fitness progress
+BMI Calculator:
+Calculates BMI using user input (height & weight)
+Form Validation:
+Ensures required fields are filled before submission
+Design:
+CSS is used for layout, colors, and responsiveness
+Flexbox is used for image alignment
+Gradient background improves UI appearance
+  
+10.Conclusion
+This project demonstrates how HTML, CSS, and JavaScript can be combined to create an interactive and user-friendly website. It simulates real-world web applications with features like navigation, validation, and calculations.
